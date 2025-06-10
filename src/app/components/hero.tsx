@@ -138,11 +138,11 @@ const HeroSection = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 <span className=" bg-clip-text text-[#5B1E1B]">
-                  Innovation
+                Hi, I&apos;m 
                 </span>
                 <br />
                 <span className="text-[#5B1E1B]">
-                  Meets Design
+                Precious
                 </span>
               </motion.h1>
 
@@ -166,7 +166,7 @@ const HeroSection = () => {
                   whileHover="hover"
                   whileTap="tap"
                 >
-                  Let's Work Together
+                  Let&apos;s Work Together
                 </motion.button>
 
 
