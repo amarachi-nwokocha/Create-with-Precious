@@ -90,7 +90,7 @@ export default function Service() {
   return (
     <>
       <motion.section
-        className="w-full bg-[#fffcee] px-6 md:px-12 py-20 text-[#5B1E1B]"
+        className="w-full  px-6 md:px-12 py-20 text-[#5B1E1B]"
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"

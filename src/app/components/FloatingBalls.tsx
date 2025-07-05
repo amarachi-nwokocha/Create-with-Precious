@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const FloatingBalls = () => {
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden">
-      {[...Array(30)].map((_, i) => (
+      {[...Array(200)].map((_, i) => (
         <motion.div
           key={i}
           className="absolute w-2 h-2 bg-[#5B1E1B] rounded-full opacity-20"

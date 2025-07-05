@@ -9,7 +9,7 @@ import PortfolioSection from "./components/PortfolioSection";
 
 export default function Home() {
   return (
-    <div className="relative bg-[#5B1E1B] backdrop-blur-[2px] overflow-hidden">
+    <div className="relative bg-[#FEFFF1] backdrop-blur-[9px] overflow-hidden">
       <FloatingBalls />
       <Navbar />
       <HeroSection />

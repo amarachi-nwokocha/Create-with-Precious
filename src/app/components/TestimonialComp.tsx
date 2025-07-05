@@ -29,7 +29,7 @@ const cardVariants = {
 
 export default function TestimonialComp() {
   return (
-    <section className="w-full bg-[#FEFFF1] py-16 px-6">
+    <section className="w-full  py-16 px-6">
       <div className="max-w-6xl mx-auto text-center mb-10">
         <h2 className="text-3xl font-bold text-[#5B1E1B]">What Past Clients Say</h2>
       </div>
