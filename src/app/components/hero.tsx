@@ -160,7 +160,7 @@ const HeroSection = () => {
               <motion.div className="relative z-10" animate={floatingAnimation}>
                 <div className="relative w-full max-w-[700px] min-h-[300px] h-[400px] xl:h-[600px] mx-auto rounded-2xl shadow-2xl bg-white/10 backdrop-blur-lg overflow-hidden">
                   <Image
-                    src="/heroImg.jpg"
+                    src="/about2.jpg"
                     alt="Hero Image"
                     fill
                     className="object-cover rounded-2xl border-2 border-[#5B1E1B]"
@@ -172,7 +172,7 @@ const HeroSection = () => {
             {/* Mobile Image */}
             <div className="relative w-full max-w-[700px] h-[300px] sm:h-[400px] mx-auto rounded-2xl shadow-2xl bg-white/10 backdrop-blur-lg overflow-hidden border-2 border-[#5B1E1B] block md:hidden">
               <Image
-                src="/heroImg.jpg"
+                src="/about2.jpg"
                 alt="Hero Image"
                 fill
                 className="object-cover rounded-2xl"
