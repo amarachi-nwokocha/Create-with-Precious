@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import CountUp from "react-countup";
-import type { ReactElement } from "react";
+// import CountUp from "react-countup";
+// import type { ReactElement } from "react";
 
 const services = [
   {
@@ -32,10 +32,10 @@ const services = [
   },
 ];
 
-const stats = [
-  { title: "organic TikTok views", end: 1000000, suffix: "+" },
-  { title: "clients served", end: 20, suffix: "+" },
-];
+// const stats = [
+//   { title: "organic TikTok views", end: 1000000, suffix: "+" },
+//   { title: "clients served", end: 20, suffix: "+" },
+// ];
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -68,23 +68,23 @@ const headingVariant = {
   show: { x: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
-const countupContainer = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
+// const countupContainer = {
+//   hidden: {},
+//   show: {
+//     transition: {
+//       staggerChildren: 0.2,
+//     },
+//   },
+// };
 
-const countupItem = {
-  hidden: { opacity: 0, y: 30 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
+// const countupItem = {
+//   hidden: { opacity: 0, y: 30 },
+//   show: {
+//     opacity: 1,
+//     y: 0,
+//     transition: { duration: 0.6, ease: "easeOut" },
+//   },
+// };
 
 export default function Service() {
   return (
@@ -109,7 +109,7 @@ export default function Service() {
         </motion.h2>
 
         <motion.div
-          className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto"
+          className="grid gap-10 md:grid-cols-2 max-w-7xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
@@ -141,7 +141,7 @@ export default function Service() {
       </motion.section>
 
       {/* CountUp Section */}
-      <section className="bg-[#5B1E1B] py-20">
+      {/* <section className="bg-[#5B1E1B] py-20">
         <motion.div
           className="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20 text-center"
           variants={countupContainer}
@@ -184,7 +184,7 @@ export default function Service() {
               ];
             }, [])}
         </motion.div>
-      </section>
+      </section> */}
     </>
   );
 }

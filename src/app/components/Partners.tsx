@@ -24,7 +24,7 @@ const TrustedBySlider = () => {
     <section className=" w-full">
       <div className="w-full flex items-center">
         {/* Trusted By Text */}
-        <div className="bg-[#5B1E1B] px-6 h-[8.2rem] flex items-center justify-center">
+        <div className="bg-[#5B1E1B] px-4 h-[150px] flex items-center justify-center">
           <h3 className="text-xl w-28 font-semibold text-center text-white">Trusted By:</h3>
         </div>
 
@@ -40,7 +40,7 @@ const TrustedBySlider = () => {
             }}
           >
             {[...logos, ...logos].map((logo, index) => (
-              <div key={index} className="min-w-[100px] h-12 relative flex-shrink-0">
+              <div key={index} className="min-w-[100px] h-[67px] relative flex-shrink-0">
                 <Image
                   src={logo}
                   alt={`Trusted logo ${index}`}
