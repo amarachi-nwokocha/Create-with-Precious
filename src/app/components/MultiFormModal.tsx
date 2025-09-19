@@ -1,81 +1,69 @@
-"use client";
+"use client"
 
-import { useState, useRef, FormEvent } from "react";
+import { motion, AnimatePresence } from "framer-motion"
+import { useRef, useState, FormEvent } from "react"
 
-export default function MultiFormModal() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [formType, setFormType] = useState(""); // selected form
-  const iframeRef = useRef<HTMLIFrameElement>(null);
+type MultiFormModalProps = {
+  open: boolean
+  onClose: () => void
+  formType: string
+}
+
+const MultiFormModal = ({ open, onClose, formType }: MultiFormModalProps) => {
+  const [isLoading, setIsLoading] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const iframeRef = useRef<HTMLIFrameElement>(null)
 
   const handleIframeLoad = () => {
     if (isSubmitted) {
-      setIsLoading(false);
-      alert("Form submitted successfully!");
-      setIsSubmitted(false);
-      setIsModalOpen(false);
-      setFormType(""); // reset selection
+      setIsLoading(false)
+      alert("Form submitted successfully!")
+      setIsSubmitted(false)
+      onClose() // close modal
     }
-  };
+  }
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsLoading(true);
-    setIsSubmitted(true);
+    e.preventDefault()
+    setIsLoading(true)
+    setIsSubmitted(true)
 
-    const form = e.target as HTMLFormElement;
-
-    // Submit via hidden iframe (bypasses CORS)
-    form.submit();
-  };
-
+    const form = e.target as HTMLFormElement
+    form.submit() // submit via hidden iframe
+  }
   return (
-    <>
-      <button
-        onClick={() => setIsModalOpen(true)}
-        className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition z-50"
-      >
-        Open Multi Form
-      </button>
-
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-black/80 flex justify-center items-center z-50 p-4">
-          <div className="bg-black rounded-lg p-6 w-full max-w-lg relative">
+    <AnimatePresence>
+      {open && (
+        <motion.div
+          className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          <motion.div
+            className="bg-white text-[#5B1E1B] rounded-2xl p-6 w-full max-w-lg relative"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+          >
+            {/* Close Button */}
             <button
-              onClick={() => setIsModalOpen(false)}
-              className="absolute top-2 right-2 text-white font-bold"
+              onClick={onClose}
+              className="absolute top-3 right-3 text-gray-600 hover:text-black"
             >
-              X
+              ✕
             </button>
 
-            <form
-              onSubmit={handleSubmit}
-              action="https://script.google.com/macros/s/AKfycbyUdluzh3ymqJF6T7tAGCLbqet9CRmPd6CyhLNrsr98jEIuOC8o29IfLeE0pD9Sicgv6g/exec"
+            <h2 className="text-xl font-bold mb-4">{formType}</h2>
+              <form
               method="POST"
+              action="https://script.google.com/macros/s/AKfycbyUdluzh3ymqJF6T7tAGCLbqet9CRmPd6CyhLNrsr98jEIuOC8o29IfLeE0pD9Sicgv6g/exec"
               target="hidden_iframe"
-              className="space-y-4"
+              onSubmit={handleSubmit}
+              className="space-y-3"
             >
-              <input type="hidden" name="formType" value={formType} />
-
-              {/* Form selector */}
-              <select
-                name="formTypeSelect"
-                required
-                value={formType}
-                onChange={(e) => setFormType(e.target.value)}
-                className="w-full border p-2 rounded"
-              >
-                <option value="">Select Form</option>
-                <option value="Mobile Event Coverage">Mobile Event Coverage</option>
-                <option value="UGC/Influencer Coordination">UGC/Influencer Coordination</option>
-                <option value="Video Editing">Video Editing</option>
-                <option value="Social Media Strategy">Social Media Strategy</option>
-                <option value="Batch Content Creation">Batch Content Creation</option>
-              </select>
-
-              {/* ------------------ FORM 1 ------------------ */}
-              {formType === "Mobile Event Coverage" && (
+            {/* Render specific form */}
+             {formType === "Mobile Event Coverage" && (
                 <>
                   <input type="text" name="entry.1496771093" placeholder="Name" className="w-full border p-2 rounded" required />
                   <input type="email" name="entry.1190185547" placeholder="Email" className="w-full border p-2 rounded" required />
@@ -85,9 +73,7 @@ export default function MultiFormModal() {
                   <input type="text" name="entry.1767645713" placeholder="Add Ons" className="w-full border p-2 rounded" />
                 </>
               )}
-
-              {/* ------------------ FORM 2 ------------------ */}
-              {formType === "UGC/Influencer Coordination" && (
+             {formType === "UGC/Influencer Coordination" && (
                 <>
                   <input type="text" name="entry.1496771093" placeholder="Brand Name" className="w-full border p-2 rounded" required />
                   <input type="email" name="entry.1190185547" placeholder="Email Address" className="w-full border p-2 rounded" required />
@@ -116,8 +102,7 @@ export default function MultiFormModal() {
                 </>
               )}
 
-              {/* ------------------ FORM 3 ------------------ */}
-              {formType === "Video Editing" && (
+       {formType === "Video Editing" && (
                 <>
                   <input type="text" name="entry.1496771093" placeholder="Name & Pronouns" className="w-full border p-2 rounded" required />
                   <input type="email" name="entry.1190185547" placeholder="Email Address" className="w-full border p-2 rounded" required />
@@ -141,8 +126,7 @@ export default function MultiFormModal() {
                 </>
               )}
 
-              {/* ------------------ FORM 4 ------------------ */}
-              {formType === "Social Media Strategy" && (
+           {formType === "Social Media Strategy" && (
                 <>
                   <input type="text" name="entry.1496771093" placeholder="Brand Name/Handle" className="w-full border p-2 rounded" />
                   <input type="email" name="entry.1190185547" placeholder="Email Address" className="w-full border p-2 rounded" />
@@ -163,9 +147,7 @@ export default function MultiFormModal() {
                   <input type="date" name="entry.1657169561" placeholder="Timeline" className="w-full border p-2 rounded" />
                 </>
               )}
-
-              {/* ------------------ FORM 5 ------------------ */}
-              {formType === "Batch Content Creation" && (
+            {formType === "Batch Content Creation" && (
                 <>
                   <input type="text" name="entry.1496771093" placeholder="Brand/Personal Name" className="w-full border p-2 rounded" />
                   <input type="email" name="entry.1190185547" placeholder="Email Address" className="w-full border p-2 rounded" />
@@ -192,15 +174,16 @@ export default function MultiFormModal() {
                   <input type="date" name="entry.1657169561" placeholder="Timeline" className="w-full border p-2 rounded" />
                 </>
               )}
-
-              <button
+               <button
                 type="submit"
                 disabled={isLoading}
-                className={`bg-black text-[#FFD700] border border-[#FFD700] px-6 py-2 rounded font-bold transition ${isLoading ? "opacity-50 cursor-not-allowed" : "hover:bg-[#FFD700] hover:text-black"}`}
+                className={`bg-[#5B1E1B] text-white border border-[#5B1E1B] px-6 py-2 rounded font-bold transition ${isLoading ? "opacity-50 cursor-not-allowed" : "hover:bg-[#5B1E1B]"}`}
               >
                 {isLoading ? "Submitting..." : "Submit"}
               </button>
-            </form>
+              </form>
+               
+          
 
             <iframe
               name="hidden_iframe"
@@ -208,9 +191,12 @@ export default function MultiFormModal() {
               onLoad={handleIframeLoad}
               style={{ display: "none" }}
             ></iframe>
-          </div>
-        </div>
+          
+          </motion.div>
+        </motion.div>
       )}
-    </>
-  );
+    </AnimatePresence>
+  )
 }
+
+export default MultiFormModal
