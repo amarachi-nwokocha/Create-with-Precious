@@ -21,12 +21,12 @@ const FormsSec = () => {
   ]
 
   return (
-    <div className="grid place-content-center mt-10 space-y-3">
+    <div className="grid place-content-center mt-10 space-y-0">
       {formOptions.map((option) => (
         <div
           key={option.id}
           onClick={() => handleSelect(option.title)}
-          className="cursor-pointer p-3 text-center font-medium text-[#5B1E1B] hover:bg-[#5B1E1B] hover:text-white border border-[#5B1E1B] transition w-80 rounded"
+          className="cursor-pointer p-3 text-center font-medium text-[#5B1E1B] hover:bg-[#5B1E1B] hover:text-white border-[#5B1E1B] border-3 transition w-80"
         >
           {option.title}
         </div>
