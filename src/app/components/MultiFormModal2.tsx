@@ -4,10 +4,10 @@ import { useState,useEffect, useRef, FormEvent } from "react";
 
 interface Props {
   initialFormType: string;
-  onClose: () => void;
+
 }
 
-export default function MultiFormModal({ initialFormType, onClose }: Props) {
+export default function MultiFormModal({ initialFormType,  }: Props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);

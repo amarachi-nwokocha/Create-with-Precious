@@ -13,25 +13,23 @@ const FormsSec = () => {
   }
 
   const formOptions = [
-    "Mobile Event Coverage",
-    "UGC/Influencer Coordination",
-    "Video Editing",
-    "Social Media Strategy",
-    "Batch Content Creation",
+    { id: 1, title: "Mobile Event Coverage" },
+    { id: 2, title: "UGC/Influencer Coordination" },
+    { id: 3, title: "Video Editing" },
+    { id: 4, title: "Social Media Strategy" },
+    { id: 5, title: "Batch Content Creation" },
   ]
 
   return (
-    <div className="grid place-content-center mt-10 space-y-0 ">
+    <div className="grid place-content-center mt-10 space-y-3">
       {formOptions.map((option) => (
-      <div className="">
-          <div
-          key={option}
-          onClick={() => handleSelect(option)}
-          className="cursor-pointer  p-3  text-center font-medium  text-[#5B1E1B] hover:bg-[#5B1E1B] hover:text-white border-[#5B1E1B] border-3 transition w-80"
+        <div
+          key={option.id}
+          onClick={() => handleSelect(option.title)}
+          className="cursor-pointer p-3 text-center font-medium text-[#5B1E1B] hover:bg-[#5B1E1B] hover:text-white border border-[#5B1E1B] transition w-80 rounded"
         >
-          {option}
+          {option.title}
         </div>
-      </div>
       ))}
 
       <MultiFormModal
