@@ -53,7 +53,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-        Creating content people
+       Struggling to create content people
           <DynamicWords />
           
         </motion.h1>
@@ -67,7 +67,7 @@ export default function HeroSection() {
   </a>
   <a
        href="mailto:createwithprecious@gmail.com"
-    className="px-6 py-3 rounded-2xl border-2 border-[#5B1E1B] text-white font-semibold hover:bg-[#5B1E1B] hover:text-white transition"
+    className="px-4 md:px-6 py-3 rounded-2xl border-2 border-[#5B1E1B] text-white font-semibold hover:bg-[#5B1E1B] hover:text-white transition"
   >
     Reach out to me
   </a>

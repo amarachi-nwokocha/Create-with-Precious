@@ -4,9 +4,9 @@ const CardVideoSec = () => {
   return (
    <div className="grid grid-cols-1 md:grid-cols-4 gap-5 px-6 my-5">
   {[
-    { text: "Mobile content production", img: "/mobile-content.jpg" },
-    { text: "Video editing", img: "/video-editing.jpg" },
-    { text: "Social media marketing", img: "/smm.jpg" },
+    { text: "Mobile Content Production", img: "/mobile-content.jpg" },
+    { text: "Video Editing", img: "/video-editing.jpg" },
+    { text: "Social Media Marketing", img: "/smm.jpg" },
     { text: "Influencer & UGC coordination", img: "/ugc.jpg" },
   ].map((item, i) => (
     <div
