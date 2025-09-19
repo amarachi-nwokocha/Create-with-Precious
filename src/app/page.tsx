@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 import Partners from "./components/Partners"
 // import Services from "./components/Services";
 import TestimonialComp from "./components/TestimonialComp"
-import PortfolioSection from "./components/PortfolioSection";
+// import PortfolioSection from "./components/PortfolioSection";
 import CardVideoSec from "./components/CardVideoSec";
 import FormsSec from "./components/FormsSec";
 
