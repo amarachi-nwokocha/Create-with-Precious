@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 export default function HeroSection2() {
@@ -35,7 +36,7 @@ export default function HeroSection2() {
             <div className="absolute -right-10 -top-10 w-[420px] h-[320px] bg-white/5 rounded-2xl transform rotate-3 shadow-2xl"></div>
 
             <div className="relative w-[420px] h-[320px] rounded-2xl overflow-hidden shadow-2xl">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&q=80"
                 alt="Abstract UI preview"
                 className="object-cover w-full h-full"
@@ -53,7 +54,7 @@ export default function HeroSection2() {
       {/* Mobile image that overlaps the bottom of the hero for smaller sizes */}
       <div className="lg:hidden absolute inset-x-0 bottom-0 flex justify-center pointer-events-none">
         <div className="w-[86%] max-w-xl transform translate-y-1/2 rounded-xl overflow-hidden shadow-2xl">
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80"
             alt="Mobile UI preview"
             className="w-full h-44 object-cover"

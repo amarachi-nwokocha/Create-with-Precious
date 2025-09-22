@@ -16,7 +16,7 @@ const DynamicWords = () => {
   }, []);
 
   return (
-    <span className="text-[#8c1825] inline-block ml-2">
+    <span className="text-[#B22E26] inline-block ml-2">
       <AnimatePresence mode="wait">
         <motion.span
           key={index}

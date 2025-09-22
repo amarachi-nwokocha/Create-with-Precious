@@ -1,53 +1,67 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import Link from "next/link";
-
-const footerVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-};
-
-export default function Footer() {
+import Link from 'next/link';
+import { FaTiktok } from "react-icons/fa";
+import { RiInstagramLine } from "react-icons/ri";
+import { MdOutlineEmail } from "react-icons/md";
+import { FaWhatsapp } from "react-icons/fa";
+const Footer = () => {
   return (
-    <motion.footer
-      className="w-full bg-[#5B1E1B] text-white py-16 px-6"
-      variants={footerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-    >
-      <div className="max-w-4xl mx-auto text-center space-y-6">
-        <h2 className="text-3xl font-bold">Work With Me</h2>
-        <p className="text-lg">Let’s make something unforgettable.</p>
+    <footer className="bg-[#5B1E1B] text-white py-10 px-6 md:px-20 w-full">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-8">
+        
+        {/* Contact & Socials */}
+        <div className="md:w-1/2 space-y-4 mt-6 md:mt-0">
+          <h3 className="text-2xl font-semibold mb-2">Contact</h3>
+          <p className="flex items-center gap-2 text-base">
+            <MdOutlineEmail size={20} /> createwithprecious@gmail.com
+          </p>
 
-        <div className="space-y-2">
-          <p>Email me directly: <span className="underline">createwithprecious@gmail.com</span></p>
-          <p>
-            LinkedIn (if you&apos;re feeling serious):{" "}
-            <a
-              href="https://www.linkedin.com/in/your-linkedin"
+          <div className="flex gap-4 mt-4">
+            <Link
+              href="https://www.instagram.com/createwithprecious_/"
               target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:text-[#c2ee03] transition"
+              className="hover:scale-110 transition-transform"
             >
-              Visit LinkedIn
-            </a>
-          </p>
-          <p>
-            Prefer a quick chat? Book a 15-minute discovery call and tell me what you’re dreaming up.
-          </p>
+              <RiInstagramLine size={24} />
+            </Link>
+            <Link
+              href="https://www.tiktok.com/@createwithprecious?_t=ZS-8zr5uh8b4Yz&_r=1"
+              target="_blank"
+              className="hover:scale-110 transition-transform"
+            >
+              <FaTiktok  size={24} />
+            </Link>
+            <Link
+              href="https://api.whatsapp.com/send/?phone=2348131911308&text&type=phone_number&app_absent=0&wame_ctl=1&source_surface=23"
+              target="_blank"
+              className="hover:scale-110 transition-transform"
+            >
+              <FaWhatsapp size={24} />
+            </Link>
+          </div>
         </div>
 
-        <div className="pt-4">
-          <Link
-            href="mailto:createwithprecious@gmail.com"
-            className="inline-block bg-[#c2ee03] text-[#5B1E1B] font-semibold px-6 py-3 rounded-full hover:scale-105 transition-transform duration-300"
-          >
-            Email Me
-          </Link>
+        {/* Branding */}
+        <div className="md:w-1/2">
+          <h2 className="text-4xl font-bold mb-2">Create With Precious</h2>
+          <p className="text-lg leading-snug">
+            Inspiring creativity through content, storytelling, and connection.
+          </p>
+         
         </div>
       </div>
-    </motion.footer>
+
+      {/* Divider and Bottom Row */}
+      <div className="w-full border-t border-black/30 mt-8 pt-4">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-base text-white px-2">
+          <p className="text-center md:text-left">
+            &copy; {new Date().getFullYear()} Create With Precious. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
   );
-}
+};
+
+export default Footer;
