@@ -23,7 +23,7 @@ const FormsSec = () => {
 
   return (
    <div className="px-4 sm:px-6 md:px-8 mt-10">
-      <h2 className="underline text-[#5B1E1B] text-2xl sm:text-3xl mb-10 font-semibold text-center">
+      <h2 className="text-3xl font-bold text-[#5B1E1B] text-center mb-5">
         Find The Right Service For You
       </h2>
 

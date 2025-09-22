@@ -54,7 +54,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
         >
        Struggling to create content people
-          <DynamicWords />
+          <DynamicWords />?
           
         </motion.h1>
         <div>
