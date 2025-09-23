@@ -38,7 +38,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="w-full h-screen flex flex-col md:flex-row items-center justify-between px-8 md:px-16 py-10 gap-10 bg-[#FEFFF1]">
+    <section className="w-full flex flex-col-reverse md:flex-row items-center justify-between px-8 md:px-16 py-10 gap-10 bg-[#FEFFF1]">
       {/* Left: Text */}
       <motion.div
         className="w-full md:w-1/2 space-y-6 md:mt-10 text-center md:text-left"
@@ -47,13 +47,26 @@ const Hero = () => {
         variants={textVariants}
       >
         <h1 className="text-4xl md:text-6xl font-bold text-[#5B1E1B]">
-       Hi, I’m Precious
+          Hi, I’m Precious
         </h1>
-        <p className="text-lg md:text-lg text-[#5B1E1B]/80">
-        Your partner for social media strategy and mobile video creation.I believe every brand has a story worth telling, and the right content can transform casual scrollers into loyal fans/customers.
-        Whether you&apos;re launching a product, building a community, or simply trying to stay relevant on social media, I help you show up with purpose on TikTok, Instagram, and beyond.
+        <div className="text-lg md:text-lg text-[#5B1E1B]/80">
+          <p className='py-2'>
+            Hi, I&apos;m Precious Adekola, a Social Media Strategist and Mobile Content Producer with a focus on platform-native storytelling for entertainment and lifestyle brands.
+          </p>
+          <p className='py-2'>
+            My work combines clean, engaging visuals with narrative-driven strategy to drive conversation, build trust, and cultivate meaningful brand affinity.
+          </p>
 
-        </p>
+          <p className='py-2'>
+            Over the past four years, I have executed digital strategies and produced content for more than twenty brands, creators, and events within Nigeria&apos;s entertainment and lifestyle industries.
+          </p>
+          <p className='py-2'>
+            Notable highlights include providing mobile content production services for Chimamanda Ngozi Adichie at the Stories She Carries event, Sisi Yemmie at Gino World Jollof Festival with Hilda Baci, and producing social content for Glazia Magazine during Adichie&apos;s Lagos Homecoming Tour.
+          </p>
+
+
+
+        </div>
       </motion.div>
 
       {/* Right: Slideshow */}
