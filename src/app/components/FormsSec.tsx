@@ -15,10 +15,10 @@ const FormsSec = () => {
 
   const formOptions = [
     { id: 1, title: "Mobile Event Coverage" },
-    { id: 2, title: "UGC/Influencer Coordination" },
     { id: 3, title: "Video Editing" },
     { id: 4, title: "Social Media Strategy" },
     { id: 5, title: "Batch Content Creation" },
+    { id: 2, title: "UGC/Influencer Coordination" },
   ]
 
   return (
